@@ -42,15 +42,10 @@ The environment is considered solved, when the average (over 100 episodes) of th
 
 ### Getting Started
 
-1. Download the environment from one of the links below.  You need only select the environment that matches your operating system:
+1. Download the environment from the link below.  You need only select the environment that matches your operating system:
 
-    - **_Version 1: One (1) Agent_**
-        - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Linux.zip)
-        - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher.app.zip)
-        - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Windows_x86.zip)
-        - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/one_agent/Reacher_Windows_x86_64.zip)
-
-    - **_Version 2: Twenty (20) Agents_**
+    
+    - **Twenty (20) Agents**
         - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux.zip)
         - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher.app.zip)
         - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86.zip)
@@ -62,27 +57,49 @@ The environment is considered solved, when the average (over 100 episodes) of th
 
 2. Place the file in the DRLND GitHub repository, in the `p2_continuous-control/` folder, and unzip (or decompress) the file. 
 
+## Dependencies
+
+To set up your python environment to run the code in this repository, follow the instructions below.
+
+1. Create (and activate) a new environment with Python 3.6.
+
+	- __Linux__ or __Mac__: 
+	```bash
+	conda create --name drlnd python=3.6
+	source activate drlnd
+	```
+	- __Windows__: 
+	```bash
+	conda create --name drlnd python=3.6 
+	activate drlnd
+	```
+	
+2. Follow the instructions in [this repository](https://github.com/openai/gym) to perform a minimal install of OpenAI gym.  
+		
+3. Clone the [Deep Reinforcement Learning Nanodegree repository](https://github.com/udacity/deep-reinforcement-learning), and navigate to the `python/` folder.  Then, install several dependencies.
+```bash
+git clone https://github.com/udacity/deep-reinforcement-learning.git
+cd deep-reinforcement-learning/python
+pip install .
+```
+
+4. Create an [IPython kernel](http://ipython.readthedocs.io/en/stable/install/kernel_install.html) for the `drlnd` environment.  
+```bash
+python -m ipykernel install --user --name drlnd --display-name "drlnd"
+```
+
+5. Before running code in a notebook, change the kernel to match the `drlnd` environment by using the drop-down `Kernel` menu. 
+
+![Kernel](drlnd_kernel.png)
+
 ### Instructions
 
 Follow the instructions in `Continuous_Control.ipynb` to get started with training your own agent!  
 
-### (Optional) Challenge: Crawler Environment
+Follow the instructions in [`Continuous_Control.ipynb`](Continuous_Control.ipynb) to train the agents using DDPG algorithm.
 
-After you have successfully completed the project, you might like to solve the more difficult **Crawler** environment.
+The trained model weights will be saved in the file `checkpoint_actor.pth` and `checkpoint_critic.pth`.
 
-![Crawler][image2]
+The model weights are used by the [`View_trained agents.ipynb`](View_trained_agents.ipynb) notebook to see how a trained agent collects bananas . 
 
-In this continuous control environment, the goal is to teach a creature with four legs to walk forward without falling.  
-
-You can read more about this environment in the ML-Agents GitHub [here](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#crawler).  To solve this harder task, you'll need to download a new Unity environment.  (**Note**: Udacity students should not submit a project with this new environment.)
-
-You need only select the environment that matches your operating system:
-- Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Crawler/Crawler_Linux.zip)
-- Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Crawler/Crawler.app.zip)
-- Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Crawler/Crawler_Windows_x86.zip)
-- Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Crawler/Crawler_Windows_x86_64.zip)
-
-Then, place the file in the `p2_continuous-control/` folder in the DRLND GitHub repository, and unzip (or decompress) the file.  Next, open `Crawler.ipynb` and follow the instructions to learn how to use the Python API to control the agent.
-
-(_For AWS_) If you'd like to train the agent on AWS (and have not [enabled a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md)), then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Crawler/Crawler_Linux_NoVis.zip) to obtain the "headless" version of the environment.  You will **not** be able to watch the agent without enabling a virtual screen, but you will be able to train the agent.  (_To watch the agent, you should follow the instructions to [enable a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md), and then download the environment for the **Linux** operating system above._)
 
